@@ -1,0 +1,364 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 94.33      2.45     2.45   186564     0.00     0.00  Defragmenter::store(int)
+  3.85      2.55     0.10   576205     0.00     0.00  QuadraticHashTable::find(DiskInfo const&)
+  0.39      2.56     0.01  1387770     0.00     0.00  DiskInfo::DiskInfo(int, int)
+  0.39      2.57     0.01   500000     0.00     0.00  DiskBlockInfo::read(std::basic_ifstream<char, std::char_traits<char> >&)
+  0.39      2.58     0.01   186564     0.00     0.00  QuadraticHashTable::remove(DiskInfo const&)
+  0.39      2.59     0.01        1     0.01     2.58  Defragmenter::Defragmenter(DiskDrive*)
+  0.39      2.60     0.01        1     0.01     0.01  DiskDrive::check()
+  0.00      2.60     0.00  1069558     0.00     0.00  DiskBlockInfo::DiskBlockInfo()
+  0.00      2.60     0.00   569559     0.00     0.00  operator new(unsigned long)
+  0.00      2.60     0.00   569558     0.00     0.00  DiskBlock::DiskBlock(DiskBlockInfo&)
+  0.00      2.60     0.00   569558     0.00     0.00  DiskDrive::readDiskBlock(int)
+  0.00      2.60     0.00   569558     0.00     0.00  DiskDrive::writeDiskBlock(DiskBlock*, int)
+  0.00      2.60     0.00   569558     0.00     0.00  operator delete(void*)
+  0.00      2.60     0.00   425000     0.00     0.00  Defragmenter::getSrcBlock(int)
+  0.00      2.60     0.00   425000     0.00     0.00  DiskBlock::setNext(unsigned int)
+  0.00      2.60     0.00   425000     0.00     0.00  DiskBlock::getNext() const
+  0.00      2.60     0.00   186564     0.00     0.00  QuadraticHashTable::insert(DiskInfo const&)
+  0.00      2.60     0.00     8000     0.00     0.00  DirectoryEntry::getFirstBlockID() const
+  0.00      2.60     0.00     4001     0.00     0.00  DirectoryEntry::DirectoryEntry(unsigned short, unsigned int, int)
+  0.00      2.60     0.00     4001     0.00     0.00  DiskDrive::getNumFiles() const
+  0.00      2.60     0.00     4000     0.00     0.00  Defragmenter::moveFile(DirectoryEntry&)
+  0.00      2.60     0.00     4000     0.00     0.00  DirectoryEntry::setFirstBlockID(unsigned int)
+  0.00      2.60     0.00     4000     0.00     0.00  DirectoryEntry::read(std::istream&)
+  0.00      2.60     0.00     4000     0.00     0.00  DirectoryEntry::getSize() const
+  0.00      2.60     0.00        5     0.00     0.00  operator new[](unsigned long)
+  0.00      2.60     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN12DefragmenterC2EP9DiskDrive
+  0.00      2.60     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN8CPUTimerC2Ev
+  0.00      2.60     0.00        1     0.00     0.00  _GLOBAL__sub_I_maxRAM
+  0.00      2.60     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      2.60     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      2.60     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      2.60     0.00        1     0.00     0.00  QuadraticHashTable::QuadraticHashTable(int, int)
+  0.00      2.60     0.00        1     0.00     0.00  CPUTimer::cur_CPUTime()
+  0.00      2.60     0.00        1     0.00     0.00  CPUTimer::reset()
+  0.00      2.60     0.00        1     0.00     0.00  CPUTimer::CPUTimer()
+  0.00      2.60     0.00        1     0.00     0.01  DiskDrive::readFile(char const*)
+  0.00      2.60     0.00        1     0.00     0.00  DiskDrive::DiskDrive()
+  0.00      2.60     0.00        1     0.00     0.00  DiskDrive::getCapacity() const
+  0.00      2.60     0.00        1     0.00     0.00  DiskDrive::getDiskAccesses() const
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.38% of 2.60 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00    2.60                 main [1]
+                0.01    2.57       1/1           Defragmenter::Defragmenter(DiskDrive*) [2]
+                0.00    0.01       1/1           DiskDrive::readFile(char const*) [11]
+                0.01    0.00       1/1           DiskDrive::check() [10]
+                0.00    0.00       1/1           DiskDrive::DiskDrive() [44]
+                0.00    0.00       1/1           CPUTimer::CPUTimer() [43]
+                0.00    0.00       1/1           CPUTimer::reset() [42]
+                0.00    0.00       1/569559      operator new(unsigned long) [20]
+                0.00    0.00       1/1           DiskDrive::getDiskAccesses() const [46]
+                0.00    0.00       1/1           CPUTimer::cur_CPUTime() [41]
+-----------------------------------------------
+                0.01    2.57       1/1           main [1]
+[2]     99.2    0.01    2.57       1         Defragmenter::Defragmenter(DiskDrive*) [2]
+                0.00    2.57    4000/4000        Defragmenter::moveFile(DirectoryEntry&) [3]
+                0.00    0.00       1/1           QuadraticHashTable::QuadraticHashTable(int, int) [12]
+                0.00    0.00    4001/4001        DiskDrive::getNumFiles() const [30]
+                0.00    0.00       1/1           DiskDrive::getCapacity() const [45]
+-----------------------------------------------
+                0.00    2.57    4000/4000        Defragmenter::Defragmenter(DiskDrive*) [2]
+[3]     98.8    0.00    2.57    4000         Defragmenter::moveFile(DirectoryEntry&) [3]
+                2.45    0.00  186564/186564      Defragmenter::store(int) [4]
+                0.00    0.12  425000/425000      Defragmenter::getSrcBlock(int) [5]
+                0.00    0.00  425000/425000      DiskBlock::getNext() const [26]
+                0.00    0.00  425000/425000      DiskBlock::setNext(unsigned int) [25]
+                0.00    0.00  425000/569558      DiskDrive::writeDiskBlock(DiskBlock*, int) [23]
+                0.00    0.00  425000/569558      operator delete(void*) [24]
+                0.00    0.00    4000/8000        DirectoryEntry::getFirstBlockID() const [28]
+                0.00    0.00    4000/4000        DirectoryEntry::setFirstBlockID(unsigned int) [31]
+-----------------------------------------------
+                2.45    0.00  186564/186564      Defragmenter::moveFile(DirectoryEntry&) [3]
+[4]     94.3    2.45    0.00  186564         Defragmenter::store(int) [4]
+                0.00    0.00  186564/1387770     DiskInfo::DiskInfo(int, int) [7]
+                0.00    0.00  186564/569558      DiskDrive::readDiskBlock(int) [22]
+                0.00    0.00  186564/186564      QuadraticHashTable::insert(DiskInfo const&) [27]
+                0.00    0.00  144558/569558      DiskDrive::writeDiskBlock(DiskBlock*, int) [23]
+                0.00    0.00  144558/569558      operator delete(void*) [24]
+-----------------------------------------------
+                0.00    0.12  425000/425000      Defragmenter::moveFile(DirectoryEntry&) [3]
+[5]      4.5    0.00    0.12  425000         Defragmenter::getSrcBlock(int) [5]
+                0.10    0.00  576205/576205      QuadraticHashTable::find(DiskInfo const&) [6]
+                0.01    0.00  186564/186564      QuadraticHashTable::remove(DiskInfo const&) [9]
+                0.01    0.00 1001205/1387770     DiskInfo::DiskInfo(int, int) [7]
+                0.00    0.00  382994/569558      DiskDrive::readDiskBlock(int) [22]
+-----------------------------------------------
+                0.10    0.00  576205/576205      Defragmenter::getSrcBlock(int) [5]
+[6]      3.8    0.10    0.00  576205         QuadraticHashTable::find(DiskInfo const&) [6]
+-----------------------------------------------
+                0.00    0.00  186564/1387770     Defragmenter::store(int) [4]
+                0.00    0.00  200001/1387770     QuadraticHashTable::QuadraticHashTable(int, int) [12]
+                0.01    0.00 1001205/1387770     Defragmenter::getSrcBlock(int) [5]
+[7]      0.4    0.01    0.00 1387770         DiskInfo::DiskInfo(int, int) [7]
+-----------------------------------------------
+                0.01    0.00  500000/500000      DiskDrive::readFile(char const*) [11]
+[8]      0.4    0.01    0.00  500000         DiskBlockInfo::read(std::basic_ifstream<char, std::char_traits<char> >&) [8]
+-----------------------------------------------
+                0.01    0.00  186564/186564      Defragmenter::getSrcBlock(int) [5]
+[9]      0.4    0.01    0.00  186564         QuadraticHashTable::remove(DiskInfo const&) [9]
+-----------------------------------------------
+                0.01    0.00       1/1           main [1]
+[10]     0.4    0.01    0.00       1         DiskDrive::check() [10]
+                0.00    0.00    4000/8000        DirectoryEntry::getFirstBlockID() const [28]
+                0.00    0.00    4000/4000        DirectoryEntry::getSize() const [33]
+                0.00    0.00       1/5           operator new[](unsigned long) [34]
+-----------------------------------------------
+                0.00    0.01       1/1           main [1]
+[11]     0.4    0.00    0.01       1         DiskDrive::readFile(char const*) [11]
+                0.01    0.00  500000/500000      DiskBlockInfo::read(std::basic_ifstream<char, std::char_traits<char> >&) [8]
+                0.00    0.00  500000/1069558     DiskBlockInfo::DiskBlockInfo() [19]
+                0.00    0.00    4001/4001        DirectoryEntry::DirectoryEntry(unsigned short, unsigned int, int) [29]
+                0.00    0.00    4000/4000        DirectoryEntry::read(std::istream&) [32]
+                0.00    0.00       3/5           operator new[](unsigned long) [34]
+-----------------------------------------------
+                0.00    0.00       1/1           Defragmenter::Defragmenter(DiskDrive*) [2]
+[12]     0.1    0.00    0.00       1         QuadraticHashTable::QuadraticHashTable(int, int) [12]
+                0.00    0.00  200001/1387770     DiskInfo::DiskInfo(int, int) [7]
+                0.00    0.00       1/5           operator new[](unsigned long) [34]
+-----------------------------------------------
+                0.00    0.00  500000/1069558     DiskDrive::readFile(char const*) [11]
+                0.00    0.00  569558/1069558     DiskBlock::DiskBlock(DiskBlockInfo&) [21]
+[19]     0.0    0.00    0.00 1069558         DiskBlockInfo::DiskBlockInfo() [19]
+-----------------------------------------------
+                0.00    0.00       1/569559      main [1]
+                0.00    0.00  569558/569559      DiskDrive::readDiskBlock(int) [22]
+[20]     0.0    0.00    0.00  569559         operator new(unsigned long) [20]
+-----------------------------------------------
+                0.00    0.00  569558/569558      DiskDrive::readDiskBlock(int) [22]
+[21]     0.0    0.00    0.00  569558         DiskBlock::DiskBlock(DiskBlockInfo&) [21]
+                0.00    0.00  569558/1069558     DiskBlockInfo::DiskBlockInfo() [19]
+-----------------------------------------------
+                0.00    0.00  186564/569558      Defragmenter::store(int) [4]
+                0.00    0.00  382994/569558      Defragmenter::getSrcBlock(int) [5]
+[22]     0.0    0.00    0.00  569558         DiskDrive::readDiskBlock(int) [22]
+                0.00    0.00  569558/569559      operator new(unsigned long) [20]
+                0.00    0.00  569558/569558      DiskBlock::DiskBlock(DiskBlockInfo&) [21]
+-----------------------------------------------
+                0.00    0.00  144558/569558      Defragmenter::store(int) [4]
+                0.00    0.00  425000/569558      Defragmenter::moveFile(DirectoryEntry&) [3]
+[23]     0.0    0.00    0.00  569558         DiskDrive::writeDiskBlock(DiskBlock*, int) [23]
+-----------------------------------------------
+                0.00    0.00  144558/569558      Defragmenter::store(int) [4]
+                0.00    0.00  425000/569558      Defragmenter::moveFile(DirectoryEntry&) [3]
+[24]     0.0    0.00    0.00  569558         operator delete(void*) [24]
+-----------------------------------------------
+                0.00    0.00  425000/425000      Defragmenter::moveFile(DirectoryEntry&) [3]
+[25]     0.0    0.00    0.00  425000         DiskBlock::setNext(unsigned int) [25]
+-----------------------------------------------
+                0.00    0.00  425000/425000      Defragmenter::moveFile(DirectoryEntry&) [3]
+[26]     0.0    0.00    0.00  425000         DiskBlock::getNext() const [26]
+-----------------------------------------------
+                0.00    0.00  186564/186564      Defragmenter::store(int) [4]
+[27]     0.0    0.00    0.00  186564         QuadraticHashTable::insert(DiskInfo const&) [27]
+-----------------------------------------------
+                0.00    0.00    4000/8000        Defragmenter::moveFile(DirectoryEntry&) [3]
+                0.00    0.00    4000/8000        DiskDrive::check() [10]
+[28]     0.0    0.00    0.00    8000         DirectoryEntry::getFirstBlockID() const [28]
+-----------------------------------------------
+                0.00    0.00    4001/4001        DiskDrive::readFile(char const*) [11]
+[29]     0.0    0.00    0.00    4001         DirectoryEntry::DirectoryEntry(unsigned short, unsigned int, int) [29]
+-----------------------------------------------
+                0.00    0.00    4001/4001        Defragmenter::Defragmenter(DiskDrive*) [2]
+[30]     0.0    0.00    0.00    4001         DiskDrive::getNumFiles() const [30]
+-----------------------------------------------
+                0.00    0.00    4000/4000        Defragmenter::moveFile(DirectoryEntry&) [3]
+[31]     0.0    0.00    0.00    4000         DirectoryEntry::setFirstBlockID(unsigned int) [31]
+-----------------------------------------------
+                0.00    0.00    4000/4000        DiskDrive::readFile(char const*) [11]
+[32]     0.0    0.00    0.00    4000         DirectoryEntry::read(std::istream&) [32]
+-----------------------------------------------
+                0.00    0.00    4000/4000        DiskDrive::check() [10]
+[33]     0.0    0.00    0.00    4000         DirectoryEntry::getSize() const [33]
+-----------------------------------------------
+                0.00    0.00       1/5           DiskDrive::check() [10]
+                0.00    0.00       1/5           QuadraticHashTable::QuadraticHashTable(int, int) [12]
+                0.00    0.00       3/5           DiskDrive::readFile(char const*) [11]
+[34]     0.0    0.00    0.00       5         operator new[](unsigned long) [34]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [54]
+[35]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN12DefragmenterC2EP9DiskDrive [35]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [38]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [54]
+[36]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN8CPUTimerC2Ev [36]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [39]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [54]
+[37]     0.0    0.00    0.00       1         _GLOBAL__sub_I_maxRAM [37]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [40]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN12DefragmenterC2EP9DiskDrive [35]
+[38]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [38]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN8CPUTimerC2Ev [36]
+[39]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [39]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I_maxRAM [37]
+[40]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [40]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[41]     0.0    0.00    0.00       1         CPUTimer::cur_CPUTime() [41]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[42]     0.0    0.00    0.00       1         CPUTimer::reset() [42]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[43]     0.0    0.00    0.00       1         CPUTimer::CPUTimer() [43]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[44]     0.0    0.00    0.00       1         DiskDrive::DiskDrive() [44]
+-----------------------------------------------
+                0.00    0.00       1/1           Defragmenter::Defragmenter(DiskDrive*) [2]
+[45]     0.0    0.00    0.00       1         DiskDrive::getCapacity() const [45]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[46]     0.0    0.00    0.00       1         DiskDrive::getDiskAccesses() const [46]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [35] _GLOBAL__sub_I__ZN12DefragmenterC2EP9DiskDrive [32] DirectoryEntry::read(std::istream&) [23] DiskDrive::writeDiskBlock(DiskBlock*, int)
+  [36] _GLOBAL__sub_I__ZN8CPUTimerC2Ev [29] DirectoryEntry::DirectoryEntry(unsigned short, unsigned int, int) [10] DiskDrive::check()
+  [37] _GLOBAL__sub_I_maxRAM   [6] QuadraticHashTable::find(DiskInfo const&) [11] DiskDrive::readFile(char const*)
+  [38] __static_initialization_and_destruction_0(int, int) [27] QuadraticHashTable::insert(DiskInfo const&) [44] DiskDrive::DiskDrive()
+  [39] __static_initialization_and_destruction_0(int, int) [9] QuadraticHashTable::remove(DiskInfo const&) [28] DirectoryEntry::getFirstBlockID() const
+  [40] __static_initialization_and_destruction_0(int, int) [12] QuadraticHashTable::QuadraticHashTable(int, int) [33] DirectoryEntry::getSize() const
+   [5] Defragmenter::getSrcBlock(int) [41] CPUTimer::cur_CPUTime() [26] DiskBlock::getNext() const
+   [4] Defragmenter::store(int) [42] CPUTimer::reset()    [45] DiskDrive::getCapacity() const
+   [3] Defragmenter::moveFile(DirectoryEntry&) [43] CPUTimer::CPUTimer() [30] DiskDrive::getNumFiles() const
+   [2] Defragmenter::Defragmenter(DiskDrive*) [7] DiskInfo::DiskInfo(int, int) [46] DiskDrive::getDiskAccesses() const
+   [8] DiskBlockInfo::read(std::basic_ifstream<char, std::char_traits<char> >&) [25] DiskBlock::setNext(unsigned int) [24] operator delete(void*)
+  [19] DiskBlockInfo::DiskBlockInfo() [21] DiskBlock::DiskBlock(DiskBlockInfo&) [34] operator new[](unsigned long)
+  [31] DirectoryEntry::setFirstBlockID(unsigned int) [22] DiskDrive::readDiskBlock(int) [20] operator new(unsigned long)
